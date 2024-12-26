@@ -18,22 +18,32 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "customer",
+        "Type": "pertemuan_2.Models.DB.Customer",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "pertemuan_2.Controllers.CustomerController",
-    "Method": "Get",
+    "Method": "Put",
+    "RelativePath": "api/Customer",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customer",
+        "Type": "pertemuan_2.Models.DB.Customer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "pertemuan_2.Controllers.CustomerController",
+    "Method": "GetCustomer",
     "RelativePath": "api/Customer/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -45,48 +55,11 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "pertemuan_2.Controllers.CustomerController",
-    "Method": "Put",
-    "RelativePath": "api/Customer/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "value",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "pertemuan_2.Controllers.CustomerController",
-    "Method": "Delete",
+    "Method": "DeleteCustomer",
     "RelativePath": "api/Customer/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -98,13 +71,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "pertemuan_2.Controllers.WeatherForecastController",
