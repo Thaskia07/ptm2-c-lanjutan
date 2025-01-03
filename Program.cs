@@ -20,6 +20,9 @@ builder.Services.AddDbContext<ApplicationContext>(
 builder.Services.AddScoped<CustomerServices>();
 // Add services to the container.
 
+builder.Services.AddScoped<ItemsServices>();
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 

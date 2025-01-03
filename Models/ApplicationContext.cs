@@ -12,5 +12,7 @@ namespace pertemuan_2.Models
         }
 
         public virtual DbSet<Customer> Customers { get; set; }
+
+        public virtual DbSet<Items> Items { get; set; }
     }
 }
