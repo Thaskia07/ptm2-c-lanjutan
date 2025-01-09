@@ -17,7 +17,7 @@ namespace pertemuan_2.Controllers
         }
 
 
-        //// GET: api/<CustomerController>
+        //// GET: api/<CustomerController>`aaaaaaaaaaax
         ///berdasarkan list
         [HttpGet]
         public IActionResult Get()
