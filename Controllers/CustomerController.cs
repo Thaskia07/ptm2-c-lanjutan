@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using pertemuan_2.Models;
 using pertemuan_2.Models.DB;
 using pertemuan_2.Services;
 
@@ -22,10 +23,31 @@ namespace pertemuan_2.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var customerList = _customerServices.GetListCustomers();
-            return Ok(customerList);
+            try
+            {
+                var customerList = _customerServices.GetListCustomers();
+                var response = new GeneralResponse
+                {
+                    StatusCode = "01",
+                    StatusDesc = " sukses",
+                    Data = customerList
 
+                };
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                var response = new GeneralResponse
+                {
+                    StatusCode = "99",
+                    StatusDesc = " Failed | " + ex.Message.ToString(),
+                    Data = null
+                };
+                return BadRequest(response);
+            }
         }
+
 
 
 
@@ -52,13 +74,38 @@ namespace pertemuan_2.Controllers
         //menggunakan iactionresult karena lebih fleksibel karena ada return ok dan return badrequest
         public IActionResult Post(Customer customer)
         {
-            var insertCustomer = _customerServices.CreateCustomer(customer);
-            if(insertCustomer)
+            try
             {
-                //return StatusCode(StatusCodes) untuk statuscode api
-                return Ok("insert customer succes");
+                var insertCustomer = _customerServices.CreateCustomer(customer);
+                if (insertCustomer)
+                {
+                    var responsiSuccess = new GeneralResponse
+                    {
+                        StatusCode = "01",
+                        StatusDesc = "Insert Customer Success",
+                        Data = null
+                    };
+                    //return StatusCode(StatusCodes) untuk statuscode api
+                    return Ok(responsiSuccess);
+                }
+                var responsiFailed = new GeneralResponse
+                {
+                    StatusCode = "02",
+                    StatusDesc = " Insert Customer Failed",
+                    Data = null
+                };
+                return BadRequest(responsiFailed);
             }
-            return BadRequest("insert customer failed");
+            catch (Exception ex)
+            {
+                var responseFailed = new GeneralResponse
+                {
+                    StatusCode = "99",
+                    StatusDesc = "Failed |" + ex.Message.ToString(),
+                    Data = null
+                };
+                return BadRequest(responseFailed);
+            }
         }
 
 
