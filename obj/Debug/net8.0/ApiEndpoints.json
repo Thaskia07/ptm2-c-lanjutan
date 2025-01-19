@@ -1,8 +1,40 @@
 [
   {
     "ContainingType": "pertemuan_2.Controllers.CustomerController",
+    "Method": "DeleteCustomer",
+    "RelativePath": "api/Customer/DeleteCustomer",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "pertemuan_2.Controllers.CustomerController",
+    "Method": "GetCustomer",
+    "RelativePath": "api/Customer/GetCustomerById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "pertemuan_2.Controllers.CustomerController",
     "Method": "Get",
-    "RelativePath": "api/Customer",
+    "RelativePath": "api/Customer/GetListCustomer",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,14 +44,14 @@
   {
     "ContainingType": "pertemuan_2.Controllers.CustomerController",
     "Method": "Post",
-    "RelativePath": "api/Customer",
+    "RelativePath": "api/Customer/InsertDataCustomer",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "customer",
-        "Type": "pertemuan_2.Models.DB.Customer",
+        "Type": "pertemuan_2.Models.DTO.CustomerRequestDTO",
         "IsRequired": true
       }
     ],
@@ -28,46 +60,19 @@
   {
     "ContainingType": "pertemuan_2.Controllers.CustomerController",
     "Method": "Put",
-    "RelativePath": "api/Customer",
+    "RelativePath": "api/Customer/UpdateCustomer",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "customer",
-        "Type": "pertemuan_2.Models.DB.Customer",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "pertemuan_2.Controllers.CustomerController",
-    "Method": "GetCustomer",
-    "RelativePath": "api/Customer/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "pertemuan_2.Controllers.CustomerController",
-    "Method": "DeleteCustomer",
-    "RelativePath": "api/Customer/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Type": "pertemuan_2.Models.DTO.CustomerRequestDTO",
         "IsRequired": true
       }
     ],
