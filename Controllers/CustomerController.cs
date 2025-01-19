@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using pertemuan_2.Models;
 using pertemuan_2.Models.DB;
+using pertemuan_2.Models.DTO;
 using pertemuan_2.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -20,7 +21,7 @@ namespace pertemuan_2.Controllers
 
         //// GET: api/<CustomerController>`aaaaaaaaaaax
         ///berdasarkan list
-        [HttpGet]
+        [HttpGet ("GetListCustomer")]
         public IActionResult Get()
         {
             try
@@ -52,7 +53,8 @@ namespace pertemuan_2.Controllers
 
 
 
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("GetCustomerById/{id}")]
 
         //berdasarkan id
         public IActionResult GetCustomer(int id)
@@ -69,10 +71,10 @@ namespace pertemuan_2.Controllers
 
 
 
-        [HttpPost]
+        [HttpPost ("InsertDataCustomer")]
 
         //menggunakan iactionresult karena lebih fleksibel karena ada return ok dan return badrequest
-        public IActionResult Post(Customer customer)
+        public IActionResult Post(CustomerRequestDTO customer)
         {
             try
             {
@@ -110,13 +112,13 @@ namespace pertemuan_2.Controllers
 
 
         // PUT api/<CustomerController>/5
-        [HttpPut]
-        public IActionResult Put(Customer customer)
+        [HttpPut("UpdateCustomer")]
+        public IActionResult Put(int id,CustomerRequestDTO customer)
         {
             try
             {
 
-                var updateCustomer = _customerServices.UpdateCustomer(customer);
+                var updateCustomer = _customerServices.UpdateCustomer(id,customer);
                 if (updateCustomer)
                 {
                     return Ok("update customert succes!");
@@ -131,7 +133,9 @@ namespace pertemuan_2.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteCustomer")] 
+        //[Route("DeleteCustomerById/{id}")]
+
 
         public IActionResult DeleteCustomer(int id)
         {
