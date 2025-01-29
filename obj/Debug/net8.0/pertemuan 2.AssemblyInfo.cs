@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pertemuan 2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf857ec73f2f082c046501277706d1a369d6f7d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9b7d238328adf678ecdd2a13752c7904a268308")]
 [assembly: System.Reflection.AssemblyProductAttribute("pertemuan 2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pertemuan 2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
